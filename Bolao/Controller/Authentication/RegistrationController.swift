@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegistrationController: UIViewController {
   
@@ -66,7 +67,7 @@ class RegistrationController: UIViewController {
     return tf
   }()
   
-  private lazy var registerButton: UIButton =  {
+  private lazy var registrationButton: UIButton =  {
     let button = UIButton(type: .system)
     button.setTitle("Registrar", for: .normal)
     button.setTitleColor(.grassGreen, for: .normal)
@@ -74,7 +75,7 @@ class RegistrationController: UIViewController {
     button.heightAnchor.constraint(equalToConstant : 50).isActive = true
     button.layer.cornerRadius = 5
     button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-    button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+    button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
     return button
   }()
 
@@ -93,8 +94,17 @@ class RegistrationController: UIViewController {
   
   //MARK: - Selectors
   
-  @objc func handleRegister() {
-     print("register")
+  @objc func handleRegistration() {
+    guard let email = emailTextField.text else { return }
+    guard let password = passwordTextField.text else { return }
+
+    Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+      if let error = error {
+        print("DEBUG: Error is \(error.localizedDescription)")
+        return
+      }
+    }
+
   }
 
   @objc func handleShowLogin() {
@@ -109,18 +119,16 @@ class RegistrationController: UIViewController {
     logoImageView.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)
     logoImageView.setDimensions(width: 120, height: 120)
     
-    let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, fullNameContainerView, userNameContainerView, registerButton])
+    let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, fullNameContainerView, userNameContainerView, registrationButton])
     stack.axis = .vertical
     stack.spacing = 20
     stack.distribution = .fillEqually
     
     view.addSubview(stack)
-    stack.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 32, paddingRight: 32)
+    stack.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 32, paddingRight: 32)
 
     view.addSubview(accountCreatedButton)
-    accountCreatedButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 40, paddingRight: 40)
-
+    accountCreatedButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 40, paddingRight: 40)
   }
-  
   
 }
