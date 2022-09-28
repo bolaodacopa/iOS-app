@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class RegistrationController: UIViewController {
   
@@ -26,7 +27,7 @@ class RegistrationController: UIViewController {
     let view = Utilities().inputContainerView(withImage: image, textField: emailTextField)
     return view
   }()
-
+  
   private lazy var passwordContainerView: UIView = {
     guard let image = UIImage(systemName: "lock") else { return UIView() }
     let view = Utilities().inputContainerView(withImage: image, textField: passwordTextField)
@@ -38,7 +39,7 @@ class RegistrationController: UIViewController {
     let view = Utilities().inputContainerView(withImage: image, textField: fullNameTextField)
     return view
   }()
-
+  
   private lazy var userNameContainerView: UIView = {
     guard let image = UIImage(systemName: "lock") else { return UIView() }
     let view = Utilities().inputContainerView(withImage: image, textField: userNameTextField)
@@ -49,7 +50,7 @@ class RegistrationController: UIViewController {
     let tf = Utilities().textFiled(withPlaceholder: "Email")
     return tf
   }()
-
+  
   private let passwordTextField: UITextField = {
     let tf = Utilities().textFiled(withPlaceholder: "Senha")
     tf.isSecureTextEntry = true
@@ -60,7 +61,7 @@ class RegistrationController: UIViewController {
     let tf = Utilities().textFiled(withPlaceholder: "Nome")
     return tf
   }()
-
+  
   private let userNameTextField: UITextField = {
     let tf = Utilities().textFiled(withPlaceholder: "Usuário")
     tf.isSecureTextEntry = true
@@ -78,13 +79,13 @@ class RegistrationController: UIViewController {
     button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
     return button
   }()
-
+  
   private lazy var accountCreatedButton: UIButton = {
     let button = Utilities().attributedButton("Já possui uma conta? ", "Logar")
     button.addTarget(self, action: #selector(handleShowLogin), for: .touchUpInside)
     return button
   }()
-
+  
   //MARK: - Lifecycle
   
   override func viewDidLoad() {
@@ -97,16 +98,18 @@ class RegistrationController: UIViewController {
   @objc func handleRegistration() {
     guard let email = emailTextField.text else { return }
     guard let password = passwordTextField.text else { return }
-
-    Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-      if let error = error {
-        print("DEBUG: Error is \(error.localizedDescription)")
-        return
+    
+    let signUpManager = FirebaseAuthManager()
+    signUpManager.createUser(email: email, password: password) {[weak self] (success) in
+      guard self != nil else { return }
+      if (success) {
+        SVProgressHUD.showSuccess(withStatus:"User was sucessfully created.")
+      } else {
+        SVProgressHUD.showError(withStatus:"There was an error.")
       }
     }
-
   }
-
+  
   @objc func handleShowLogin() {
     navigationController?.popViewController(animated: true)
   }
@@ -114,7 +117,7 @@ class RegistrationController: UIViewController {
   //MARK: - Helpers
   func configureUI() {
     view.backgroundColor = .grassGreen
-
+    
     view.addSubview(logoImageView)
     logoImageView.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)
     logoImageView.setDimensions(width: 120, height: 120)
@@ -126,7 +129,7 @@ class RegistrationController: UIViewController {
     
     view.addSubview(stack)
     stack.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 32, paddingRight: 32)
-
+    
     view.addSubview(accountCreatedButton)
     accountCreatedButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 40, paddingRight: 40)
   }

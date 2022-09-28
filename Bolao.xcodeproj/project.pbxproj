@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7CD88FD5325504BC0C031827 /* Pods_Bolao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E121943363B19BCA14467 /* Pods_Bolao.framework */; };
+		E931B8D428E39D19005C4B73 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931B8D328E39D19005C4B73 /* FirebaseAuthManager.swift */; };
 		E94E9E0128DE5555008CA5D0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94E9E0028DE5555008CA5D0 /* MainTabBarController.swift */; };
 		E94E9E0328DE56A4008CA5D0 /* RankingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94E9E0228DE56A4008CA5D0 /* RankingController.swift */; };
 		E94E9E0528DE56E8008CA5D0 /* MatchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94E9E0428DE56E8008CA5D0 /* MatchesController.swift */; };
@@ -28,6 +29,7 @@
 		2E2E121943363B19BCA14467 /* Pods_Bolao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bolao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE8AE1903DF7BDD0D25F2D8 /* Pods-Bolao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bolao.debug.xcconfig"; path = "Target Support Files/Pods-Bolao/Pods-Bolao.debug.xcconfig"; sourceTree = "<group>"; };
 		D60567E6C988A962782156C0 /* Pods-Bolao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bolao.release.xcconfig"; path = "Target Support Files/Pods-Bolao/Pods-Bolao.release.xcconfig"; sourceTree = "<group>"; };
+		E931B8D328E39D19005C4B73 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		E94E9E0028DE5555008CA5D0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E94E9E0228DE56A4008CA5D0 /* RankingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingController.swift; sourceTree = "<group>"; };
 		E94E9E0428DE56E8008CA5D0 /* MatchesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesController.swift; sourceTree = "<group>"; };
@@ -72,8 +74,15 @@
 				2FE8AE1903DF7BDD0D25F2D8 /* Pods-Bolao.debug.xcconfig */,
 				D60567E6C988A962782156C0 /* Pods-Bolao.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E931B8D228E39D03005C4B73 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E931B8D328E39D19005C4B73 /* FirebaseAuthManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		E94E9DFA28DE5472008CA5D0 /* Model */ = {
@@ -146,6 +155,7 @@
 		E959312B28DA01A600F672ED /* Bolao */ = {
 			isa = PBXGroup;
 			children = (
+				E931B8D228E39D03005C4B73 /* Service */,
 				E94E9DFA28DE5472008CA5D0 /* Model */,
 				E94E9DFB28DE547D008CA5D0 /* View */,
 				E94E9DFC28DE5485008CA5D0 /* ViewModel */,
@@ -313,6 +323,7 @@
 				E9708B3C28E2491900327B95 /* Utilities.swift in Sources */,
 				E959312D28DA01A600F672ED /* AppDelegate.swift in Sources */,
 				E959312F28DA01A600F672ED /* SceneDelegate.swift in Sources */,
+				E931B8D428E39D19005C4B73 /* FirebaseAuthManager.swift in Sources */,
 				E9708B3828E23FF300327B95 /* LoginController.swift in Sources */,
 				E94E9E0128DE5555008CA5D0 /* MainTabBarController.swift in Sources */,
 				E9708B2A28E230C500327B95 /* Extensions.swift in Sources */,
