@@ -31,6 +31,7 @@
 		E9E2788528E939660049A911 /* UtilsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2788428E939660049A911 /* UtilsService.swift */; };
 		E9E2788728EB21C30049A911 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2788628EB21C30049A911 /* TokenManager.swift */; };
 		E9E2788928EB37390049A911 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2788828EB37390049A911 /* Alerts.swift */; };
+		E9E2788B28EB6E250049A911 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2788A28EB6E250049A911 /* Teams.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		E9E2788428E939660049A911 /* UtilsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsService.swift; sourceTree = "<group>"; };
 		E9E2788628EB21C30049A911 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		E9E2788828EB37390049A911 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		E9E2788A28EB6E250049A911 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		E9FC5EC628E5F77B00A3795F /* Bolao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bolao.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E9CC1E1028E7888A002A5549 /* User.swift */,
-				E9E2788628EB21C30049A911 /* TokenManager.swift */,
+				E9E2788A28EB6E250049A911 /* Teams.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +146,7 @@
 		E94E9DFF28DE54A5008CA5D0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E9E2788628EB21C30049A911 /* TokenManager.swift */,
 				E9708B2928E230C500327B95 /* Extensions.swift */,
 				E9708B3B28E2491900327B95 /* Utilities.swift */,
 				E95F735928E62E6100C32AA3 /* Constants.swift */,
@@ -350,6 +353,7 @@
 				E9E2788528E939660049A911 /* UtilsService.swift in Sources */,
 				E9E2788328E9388D0049A911 /* MatchService.swift in Sources */,
 				E9708B3828E23FF300327B95 /* LoginController.swift in Sources */,
+				E9E2788B28EB6E250049A911 /* Teams.swift in Sources */,
 				E94E9E0128DE5555008CA5D0 /* MainTabBarController.swift in Sources */,
 				E9708B2A28E230C500327B95 /* Extensions.swift in Sources */,
 				E95F735A28E62E6100C32AA3 /* Constants.swift in Sources */,

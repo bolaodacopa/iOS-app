@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import SVProgressHUD
 
 class MatchesController: UIViewController {
   
@@ -29,21 +30,20 @@ class MatchesController: UIViewController {
   
   func getTest() {
     MatchService.shared.getTest() { result in
-      switch result {
-      case .success(let returnJson):
-        print(returnJson)
-        DispatchQueue.main.async {
-          print("get test result")
-        }
-        
-      case .failure(let failure):
-        switch failure {
-        case .connectionError:
-          print("Check your Internet connection")
-        case .authorizationError(let errorJson):
-          print(errorJson.description)
-        default:
-          print("Unknow Error")
+      DispatchQueue.main.async {
+        switch result {
+        case .success(let returnJson):
+          SVProgressHUD.showSuccess(withStatus: returnJson["content"] as? String)
+
+        case .failure(let failure):
+          switch failure {
+          case .connectionError:
+            SVProgressHUD.showError(withStatus: "Verifique sua conexão com a internet")
+          case .authorizationError(let errorJson):
+            SVProgressHUD.showError(withStatus: errorJson.description)
+          default:
+            SVProgressHUD.showError(withStatus: "Erro Desconhecido")
+          }
         }
       }
     }
@@ -95,5 +95,4 @@ class MatchesController: UIViewController {
 //    imageView.sd_setImage(with: profileImageUrl, completed: nil)
     
   }
-  
 }
