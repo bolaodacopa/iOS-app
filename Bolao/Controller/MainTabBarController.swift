@@ -30,6 +30,7 @@ class MainTabBarController: UITabBarController {
   
   func fetchUser() {
     UserService.shared.fetchUser { user in
+      self.user = user
     }
   }
   

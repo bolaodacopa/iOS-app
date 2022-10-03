@@ -111,8 +111,8 @@ class RegistrationController: UIViewController {
       
       switch result {
       case .success(let returnJson):
-        print(returnJson)
-        LoginController().handleLogin()
+
+        //do login
         self.handleLogin(username, password)
         
       case .failure(let failure):
@@ -133,13 +133,24 @@ class RegistrationController: UIViewController {
       switch result {
       case .success(let returnJson):
         print(returnJson)
+
         DispatchQueue.main.async {
+          if let accessToken = returnJson["accessToken"] as? String {
+            var tokenManager = TokenManager.shared
+            tokenManager.accessToken = accessToken
+          }
+          //store user data
+          let defaults = UserDefaults.standard
+          defaults.set(returnJson, forKey: "userData")
+          defaults.synchronize()
+          
+          //Show Main View
           guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else { return }
           guard let tab = window.rootViewController as? MainTabBarController else { return }
           tab.authenticateUserAndConfigureUI()
           self.dismiss(animated: true)
         }
-        
+
       case .failure(let failure):
         switch failure {
         case .connectionError:

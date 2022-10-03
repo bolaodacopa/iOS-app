@@ -80,17 +80,18 @@ class LoginController: UIViewController {
       case .success(let returnJson):
         print(returnJson)
         DispatchQueue.main.async {
-          guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else { return }
-          guard let tab = window.rootViewController as? MainTabBarController else { return }
           if let accessToken = returnJson["accessToken"] as? String {
             var tokenManager = TokenManager.shared
             tokenManager.accessToken = accessToken
           }
-
           //store user data
           let defaults = UserDefaults.standard
           defaults.set(returnJson, forKey: "userData")
+          defaults.synchronize()
           
+          //Show Main View
+          guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else { return }
+          guard let tab = window.rootViewController as? MainTabBarController else { return }
           tab.authenticateUserAndConfigureUI()
           self.dismiss(animated: true)
         }

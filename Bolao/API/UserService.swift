@@ -19,8 +19,6 @@ struct UserService {
     if let dictionary = defaults.object(forKey: "userData") as? [String: AnyObject] {
       let user = User(token: token, dictionary: dictionary)
       completion(user)
-    } else {
-      print("ops")
     }
   }
   

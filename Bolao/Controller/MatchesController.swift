@@ -23,7 +23,6 @@ class MatchesController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
-    configureProfileButton()
   }
   
   // MARK: - API
