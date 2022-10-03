@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Firebase
-import SVProgressHUD
 
 class RegistrationController: UIViewController {
   
@@ -35,36 +33,35 @@ class RegistrationController: UIViewController {
   }()
   
   private lazy var fullNameContainerView: UIView = {
-    guard let image = UIImage(systemName: "envelope") else { return UIView() }
+    guard let image = UIImage(systemName: "person") else { return UIView() }
     let view = Utilities().inputContainerView(withImage: image, textField: fullNameTextField)
     return view
   }()
   
   private lazy var userNameContainerView: UIView = {
-    guard let image = UIImage(systemName: "lock") else { return UIView() }
+    guard let image = UIImage(systemName: "figure.soccer") else { return UIView() }
     let view = Utilities().inputContainerView(withImage: image, textField: userNameTextField)
     return view
   }()
   
-  private let emailTextField: UITextField = {
+  private let emailTextField: UITextField = { //email
     let tf = Utilities().textFiled(withPlaceholder: "Email")
     return tf
   }()
   
-  private let passwordTextField: UITextField = {
+  private let passwordTextField: UITextField = { //password
     let tf = Utilities().textFiled(withPlaceholder: "Senha")
     tf.isSecureTextEntry = true
     return tf
   }()
   
-  private let fullNameTextField: UITextField = {
+  private let fullNameTextField: UITextField = { //name
     let tf = Utilities().textFiled(withPlaceholder: "Nome")
     return tf
   }()
   
-  private let userNameTextField: UITextField = {
+  private let userNameTextField: UITextField = { //username
     let tf = Utilities().textFiled(withPlaceholder: "Usuário")
-    tf.isSecureTextEntry = true
     return tf
   }()
   
@@ -96,16 +93,62 @@ class RegistrationController: UIViewController {
   //MARK: - Selectors
   
   @objc func handleRegistration() {
+    
     guard let email = emailTextField.text else { return }
     guard let password = passwordTextField.text else { return }
+    guard let fullname = fullNameTextField.text else { return }
+    guard let username = userNameTextField.text else { return }
     
-    let signUpManager = FirebaseAuthManager()
-    signUpManager.createUser(email: email, password: password) {[weak self] (success) in
-      guard self != nil else { return }
-      if (success) {
-        SVProgressHUD.showSuccess(withStatus:"User was sucessfully created.")
-      } else {
-        SVProgressHUD.showError(withStatus:"There was an error.")
+    let credentials = AuthCredentials(email: email, password: password, fullname: fullname, username: username)
+    //    AuthService.shared.registerUser(credentials: credentials) { error, ref in
+    //      guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else { return }
+    //      guard let tab = window.rootViewController as? MainTabBarController else { return }
+    //      tab.authenticateUserAndConfigureUI()
+    //      self.dismiss(animated: true)
+    //    }
+    
+    AuthService.shared.registrarUsuario(credentials: credentials, completion: { result in
+      
+      switch result {
+      case .success(let returnJson):
+        print(returnJson)
+        LoginController().handleLogin()
+        self.handleLogin(username, password)
+        
+      case .failure(let failure):
+        switch failure {
+        case .connectionError:
+          print("Check your Internet connection")
+        case .authorizationError(let errorJson):
+          print(errorJson.description)
+        default:
+          print("Unknow Error")
+        }
+      }
+    })
+  }
+  
+  func handleLogin(_ username: String, _ password: String) {
+    AuthService.shared.logarUsuario(username, password) { result in
+      switch result {
+      case .success(let returnJson):
+        print(returnJson)
+        DispatchQueue.main.async {
+          guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else { return }
+          guard let tab = window.rootViewController as? MainTabBarController else { return }
+          tab.authenticateUserAndConfigureUI()
+          self.dismiss(animated: true)
+        }
+        
+      case .failure(let failure):
+        switch failure {
+        case .connectionError:
+          print("Check your Internet connection")
+        case .authorizationError(let errorJson):
+          print(errorJson.description)
+        default:
+          print("Unknow Error")
+        }
       }
     }
   }
@@ -122,7 +165,7 @@ class RegistrationController: UIViewController {
     logoImageView.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)
     logoImageView.setDimensions(width: 120, height: 120)
     
-    let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, fullNameContainerView, userNameContainerView, registrationButton])
+    let stack = UIStackView(arrangedSubviews: [fullNameContainerView, emailContainerView, userNameContainerView, passwordContainerView, registrationButton])
     stack.axis = .vertical
     stack.spacing = 20
     stack.distribution = .fillEqually

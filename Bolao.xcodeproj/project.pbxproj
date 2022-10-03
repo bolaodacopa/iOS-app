@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7CD88FD5325504BC0C031827 /* Pods_Bolao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E121943363B19BCA14467 /* Pods_Bolao.framework */; };
-		E931B8D428E39D19005C4B73 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931B8D328E39D19005C4B73 /* FirebaseAuthManager.swift */; };
+		BA53F95A6ACA002E38B2C5BF /* Pods_Bolao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C73FC6EEF9F6D736FB8F29B /* Pods_Bolao.framework */; };
+		E931B8D428E39D19005C4B73 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931B8D328E39D19005C4B73 /* AuthService.swift */; };
 		E94E9E0128DE5555008CA5D0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94E9E0028DE5555008CA5D0 /* MainTabBarController.swift */; };
 		E94E9E0328DE56A4008CA5D0 /* RankingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94E9E0228DE56A4008CA5D0 /* RankingController.swift */; };
 		E94E9E0528DE56E8008CA5D0 /* MatchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94E9E0428DE56E8008CA5D0 /* MatchesController.swift */; };
@@ -18,18 +18,26 @@
 		E959313428DA01A600F672ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E959313228DA01A600F672ED /* Main.storyboard */; };
 		E959313628DA01A700F672ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E959313528DA01A700F672ED /* Assets.xcassets */; };
 		E959313928DA01A700F672ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E959313728DA01A700F672ED /* LaunchScreen.storyboard */; };
+		E95F735828E6033000C32AA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E95F735728E6033000C32AA3 /* GoogleService-Info.plist */; };
+		E95F735A28E62E6100C32AA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95F735928E62E6100C32AA3 /* Constants.swift */; };
 		E9708B2A28E230C500327B95 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9708B2928E230C500327B95 /* Extensions.swift */; };
-		E9708B2C28E23D5200327B95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9708B2B28E23D5200327B95 /* GoogleService-Info.plist */; };
 		E9708B3828E23FF300327B95 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9708B3728E23FF300327B95 /* LoginController.swift */; };
 		E9708B3A28E2409200327B95 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9708B3928E2409200327B95 /* RegistrationController.swift */; };
 		E9708B3C28E2491900327B95 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9708B3B28E2491900327B95 /* Utilities.swift */; };
+		E9CC1E0B28E74AB0002A5549 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CC1E0A28E74AB0002A5549 /* NewsController.swift */; };
+		E9CC1E0F28E774E6002A5549 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CC1E0E28E774E6002A5549 /* UserService.swift */; };
+		E9CC1E1128E7888A002A5549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CC1E1028E7888A002A5549 /* User.swift */; };
+		E9E2788328E9388D0049A911 /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2788228E9388D0049A911 /* MatchService.swift */; };
+		E9E2788528E939660049A911 /* UtilsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2788428E939660049A911 /* UtilsService.swift */; };
+		E9E2788728EB21C30049A911 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2788628EB21C30049A911 /* TokenManager.swift */; };
+		E9E2788928EB37390049A911 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2788828EB37390049A911 /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E2E121943363B19BCA14467 /* Pods_Bolao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bolao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FE8AE1903DF7BDD0D25F2D8 /* Pods-Bolao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bolao.debug.xcconfig"; path = "Target Support Files/Pods-Bolao/Pods-Bolao.debug.xcconfig"; sourceTree = "<group>"; };
-		D60567E6C988A962782156C0 /* Pods-Bolao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bolao.release.xcconfig"; path = "Target Support Files/Pods-Bolao/Pods-Bolao.release.xcconfig"; sourceTree = "<group>"; };
-		E931B8D328E39D19005C4B73 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		4C73FC6EEF9F6D736FB8F29B /* Pods_Bolao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bolao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5FFD5301EFB226E0F89B07 /* Pods-Bolao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bolao.release.xcconfig"; path = "Target Support Files/Pods-Bolao/Pods-Bolao.release.xcconfig"; sourceTree = "<group>"; };
+		E719D76FA406EF1E196B5735 /* Pods-Bolao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bolao.debug.xcconfig"; path = "Target Support Files/Pods-Bolao/Pods-Bolao.debug.xcconfig"; sourceTree = "<group>"; };
+		E931B8D328E39D19005C4B73 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E94E9E0028DE5555008CA5D0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E94E9E0228DE56A4008CA5D0 /* RankingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingController.swift; sourceTree = "<group>"; };
 		E94E9E0428DE56E8008CA5D0 /* MatchesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesController.swift; sourceTree = "<group>"; };
@@ -41,11 +49,20 @@
 		E959313528DA01A700F672ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E959313828DA01A700F672ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E959313A28DA01A700F672ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E95F735728E6033000C32AA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E95F735928E62E6100C32AA3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9708B2928E230C500327B95 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E9708B2B28E23D5200327B95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9708B3728E23FF300327B95 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E9708B3928E2409200327B95 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		E9708B3B28E2491900327B95 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		E9CC1E0A28E74AB0002A5549 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
+		E9CC1E0E28E774E6002A5549 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		E9CC1E1028E7888A002A5549 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E9E2788228E9388D0049A911 /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
+		E9E2788428E939660049A911 /* UtilsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsService.swift; sourceTree = "<group>"; };
+		E9E2788628EB21C30049A911 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		E9E2788828EB37390049A911 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		E9FC5EC628E5F77B00A3795F /* Bolao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bolao.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,41 +70,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CD88FD5325504BC0C031827 /* Pods_Bolao.framework in Frameworks */,
+				BA53F95A6ACA002E38B2C5BF /* Pods_Bolao.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B8DC33465CD692A3718F5D2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2E2E121943363B19BCA14467 /* Pods_Bolao.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3199B2A6C4E230D89E8F27C6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2FE8AE1903DF7BDD0D25F2D8 /* Pods-Bolao.debug.xcconfig */,
-				D60567E6C988A962782156C0 /* Pods-Bolao.release.xcconfig */,
+				E719D76FA406EF1E196B5735 /* Pods-Bolao.debug.xcconfig */,
+				BF5FFD5301EFB226E0F89B07 /* Pods-Bolao.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E931B8D228E39D03005C4B73 /* Service */ = {
+		96676A143B55C2E51E1C7A9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E931B8D328E39D19005C4B73 /* FirebaseAuthManager.swift */,
+				4C73FC6EEF9F6D736FB8F29B /* Pods_Bolao.framework */,
 			);
-			path = Service;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E94E9DFA28DE5472008CA5D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9CC1E1028E7888A002A5549 /* User.swift */,
+				E9E2788628EB21C30049A911 /* TokenManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,6 +125,7 @@
 				E94E9E0428DE56E8008CA5D0 /* MatchesController.swift */,
 				E94E9E0228DE56A4008CA5D0 /* RankingController.swift */,
 				E94E9E0628DE573D008CA5D0 /* UserController.swift */,
+				E9CC1E0A28E74AB0002A5549 /* NewsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -121,6 +133,10 @@
 		E94E9DFE28DE549F008CA5D0 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E931B8D328E39D19005C4B73 /* AuthService.swift */,
+				E9E2788228E9388D0049A911 /* MatchService.swift */,
+				E9CC1E0E28E774E6002A5549 /* UserService.swift */,
+				E9E2788428E939660049A911 /* UtilsService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -130,6 +146,8 @@
 			children = (
 				E9708B2928E230C500327B95 /* Extensions.swift */,
 				E9708B3B28E2491900327B95 /* Utilities.swift */,
+				E95F735928E62E6100C32AA3 /* Constants.swift */,
+				E9E2788828EB37390049A911 /* Alerts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -140,7 +158,7 @@
 				E959312B28DA01A600F672ED /* Bolao */,
 				E959312A28DA01A600F672ED /* Products */,
 				3199B2A6C4E230D89E8F27C6 /* Pods */,
-				0B8DC33465CD692A3718F5D2 /* Frameworks */,
+				96676A143B55C2E51E1C7A9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,7 +173,7 @@
 		E959312B28DA01A600F672ED /* Bolao */ = {
 			isa = PBXGroup;
 			children = (
-				E931B8D228E39D03005C4B73 /* Service */,
+				E9FC5EC628E5F77B00A3795F /* Bolao.entitlements */,
 				E94E9DFA28DE5472008CA5D0 /* Model */,
 				E94E9DFB28DE547D008CA5D0 /* View */,
 				E94E9DFC28DE5485008CA5D0 /* ViewModel */,
@@ -168,7 +186,7 @@
 				E959313228DA01A600F672ED /* Main.storyboard */,
 				E959313728DA01A700F672ED /* LaunchScreen.storyboard */,
 				E959313A28DA01A700F672ED /* Info.plist */,
-				E9708B2B28E23D5200327B95 /* GoogleService-Info.plist */,
+				E95F735728E6033000C32AA3 /* GoogleService-Info.plist */,
 			);
 			path = Bolao;
 			sourceTree = "<group>";
@@ -189,12 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E959313D28DA01A700F672ED /* Build configuration list for PBXNativeTarget "Bolao" */;
 			buildPhases = (
-				0AD1A4AE28E111E0E3AFF40F /* [CP] Check Pods Manifest.lock */,
+				D9DC10D42F494193B70BBD34 /* [CP] Check Pods Manifest.lock */,
 				E959312528DA01A600F672ED /* Sources */,
 				E959312628DA01A600F672ED /* Frameworks */,
 				E959312728DA01A600F672ED /* Resources */,
 				E9F3F77028E38D1000940253 /* ShellScript */,
-				59C492C4EB1AFF09F1810A5B /* [CP] Embed Pods Frameworks */,
+				1CAE89EE8B57D2B9958115ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,16 +262,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				E959313928DA01A700F672ED /* LaunchScreen.storyboard in Resources */,
-				E9708B2C28E23D5200327B95 /* GoogleService-Info.plist in Resources */,
 				E959313628DA01A700F672ED /* Assets.xcassets in Resources */,
 				E959313428DA01A600F672ED /* Main.storyboard in Resources */,
+				E95F735828E6033000C32AA3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0AD1A4AE28E111E0E3AFF40F /* [CP] Check Pods Manifest.lock */ = {
+		1CAE89EE8B57D2B9958115ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bolao/Pods-Bolao-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bolao/Pods-Bolao-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bolao/Pods-Bolao-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9DC10D42F494193B70BBD34 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -273,23 +308,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		59C492C4EB1AFF09F1810A5B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bolao/Pods-Bolao-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bolao/Pods-Bolao-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bolao/Pods-Bolao-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9F3F77028E38D1000940253 /* ShellScript */ = {
@@ -316,17 +334,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9CC1E0F28E774E6002A5549 /* UserService.swift in Sources */,
+				E9E2788928EB37390049A911 /* Alerts.swift in Sources */,
+				E9E2788728EB21C30049A911 /* TokenManager.swift in Sources */,
+				E9CC1E0B28E74AB0002A5549 /* NewsController.swift in Sources */,
 				E94E9E0728DE573D008CA5D0 /* UserController.swift in Sources */,
 				E9708B3A28E2409200327B95 /* RegistrationController.swift in Sources */,
 				E94E9E0528DE56E8008CA5D0 /* MatchesController.swift in Sources */,
 				E94E9E0328DE56A4008CA5D0 /* RankingController.swift in Sources */,
 				E9708B3C28E2491900327B95 /* Utilities.swift in Sources */,
 				E959312D28DA01A600F672ED /* AppDelegate.swift in Sources */,
+				E9CC1E1128E7888A002A5549 /* User.swift in Sources */,
 				E959312F28DA01A600F672ED /* SceneDelegate.swift in Sources */,
-				E931B8D428E39D19005C4B73 /* FirebaseAuthManager.swift in Sources */,
+				E931B8D428E39D19005C4B73 /* AuthService.swift in Sources */,
+				E9E2788528E939660049A911 /* UtilsService.swift in Sources */,
+				E9E2788328E9388D0049A911 /* MatchService.swift in Sources */,
 				E9708B3828E23FF300327B95 /* LoginController.swift in Sources */,
 				E94E9E0128DE5555008CA5D0 /* MainTabBarController.swift in Sources */,
 				E9708B2A28E230C500327B95 /* Extensions.swift in Sources */,
+				E95F735A28E62E6100C32AA3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,17 +494,18 @@
 		};
 		E959313E28DA01A700F672ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FE8AE1903DF7BDD0D25F2D8 /* Pods-Bolao.debug.xcconfig */;
+			baseConfigurationReference = E719D76FA406EF1E196B5735 /* Pods-Bolao.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Bolao/Bolao.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SM2Y5SL5S5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bolao/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -488,7 +515,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.Bolao;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.bolao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -498,17 +525,18 @@
 		};
 		E959313F28DA01A700F672ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D60567E6C988A962782156C0 /* Pods-Bolao.release.xcconfig */;
+			baseConfigurationReference = BF5FFD5301EFB226E0F89B07 /* Pods-Bolao.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Bolao/Bolao.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SM2Y5SL5S5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bolao/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -518,7 +546,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.Bolao;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.bolao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -18,10 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     appDelegate.window = self.window
     
-    guard let scene = (scene as? UIWindowScene) else { return }
-    window = UIWindow(windowScene: scene)
-    window?.rootViewController = UINavigationController(rootViewController: LoginController())
-    window?.makeKeyAndVisible()
+    DispatchQueue.main.asyncAfter(deadline: .now()) { [self] in
+      guard let scene = (scene as? UIWindowScene) else { return }
+      window = UIWindow(windowScene: scene)
+      window?.rootViewController = MainTabBarController()
+      window?.makeKeyAndVisible()
+    }
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {

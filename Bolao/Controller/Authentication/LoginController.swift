@@ -20,9 +20,9 @@ class LoginController: UIViewController {
     return iv
   }()
   
-  private lazy var emailContainerView: UIView = {
-    guard let image = UIImage(systemName: "envelope") else { return UIView() }
-    let view = Utilities().inputContainerView(withImage: image, textField: emailTextField)
+  private lazy var usernameContainerView: UIView = {
+    guard let image = UIImage(systemName: "figure.soccer") else { return UIView() }
+    let view = Utilities().inputContainerView(withImage: image, textField: usernameTextField)
     return view
   }()
 
@@ -32,8 +32,8 @@ class LoginController: UIViewController {
     return view
   }()
   
-  private let emailTextField: UITextField = {
-    let tf = Utilities().textFiled(withPlaceholder: "Email")
+  private let usernameTextField: UITextField = {
+    let tf = Utilities().textFiled(withPlaceholder: "Usuário")
     return tf
   }()
 
@@ -43,7 +43,7 @@ class LoginController: UIViewController {
     return tf
   }()
   
-  private lazy var loginButton: UIButton =  {
+  private lazy var loginButton: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("Log In", for: .normal)
     button.setTitleColor(.grassGreen, for: .normal)
@@ -70,8 +70,63 @@ class LoginController: UIViewController {
   
   //MARK: - Selectors
   
+  func handleLogUserIn() {
+    
+    guard let username = usernameTextField.text else { return }
+    guard let password = passwordTextField.text else { return }
+
+    AuthService.shared.logarUsuario(username, password) { result in
+      switch result {
+      case .success(let returnJson):
+        print(returnJson)
+        DispatchQueue.main.async {
+          guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else { return }
+          guard let tab = window.rootViewController as? MainTabBarController else { return }
+          if let accessToken = returnJson["accessToken"] as? String {
+            var tokenManager = TokenManager.shared
+            tokenManager.accessToken = accessToken
+          }
+
+          //store user data
+          let defaults = UserDefaults.standard
+          defaults.set(returnJson, forKey: "userData")
+          
+          tab.authenticateUserAndConfigureUI()
+          self.dismiss(animated: true)
+        }
+        
+      case .failure(let failure):
+        switch failure {
+        case .connectionError:
+          print("Check your Internet connection")
+        case .authorizationError(let errorJson):
+          print(errorJson.description)
+        default:
+          print("Unknow Error")
+        }
+      }
+    }
+  }
+
   @objc func handleLogin() {
-     print("handleLogin")
+    
+    handleLogUserIn()
+
+
+    //Firebase
+//    guard let email = emailTextField.text else { return }
+//    guard let password = passwordTextField.text else { return }
+//    AuthService.shared.logUserIn(withEmail: email, password: password) { result, error in
+//      if let error = error {
+//        print(error.localizedDescription)
+//        return
+//      }
+//
+//      guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else { return }
+//      guard let tab = window.rootViewController as? MainTabBarController else { return }
+//      tab.authenticateUserAndConfigureUI()
+//      self.dismiss(animated: true)
+//    }
   }
   
   @objc func handleShowSignUp() {
@@ -90,7 +145,7 @@ class LoginController: UIViewController {
     logoImageView.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)
     logoImageView.setDimensions(width: 120, height: 120)
     
-    let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
+    let stack = UIStackView(arrangedSubviews: [usernameContainerView, passwordContainerView, loginButton])
     stack.axis = .vertical
     stack.spacing = 20
     stack.distribution = .fillEqually

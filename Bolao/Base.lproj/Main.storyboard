@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B0B-r0-M4J">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,29 +10,34 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="Kec-ma-1Mm">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bolao" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="B0B-r0-M4J" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="diW-AT-YSs">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mgE-Jo-Kct">
-                                <rect key="frame" x="123" y="202" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="l3R-rK-LzF">
+                                <rect key="frame" x="0.0" y="6.6666666666666856" width="390" height="844"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="n9v-zr-Ivr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="l3R-rK-LzF" firstAttribute="height" secondItem="diW-AT-YSs" secondAttribute="height" id="FhL-Xb-n4j"/>
+                            <constraint firstItem="l3R-rK-LzF" firstAttribute="centerX" secondItem="n9v-zr-Ivr" secondAttribute="centerX" id="P82-9k-uYF"/>
+                            <constraint firstItem="l3R-rK-LzF" firstAttribute="centerY" secondItem="n9v-zr-Ivr" secondAttribute="centerY" id="ZQf-qt-AZN"/>
+                            <constraint firstItem="l3R-rK-LzF" firstAttribute="width" secondItem="diW-AT-YSs" secondAttribute="width" id="oBJ-Hf-ZOk"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lp9-fA-G8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="4"/>
+            <point key="canvasLocation" x="-128" y="112"/>
         </scene>
     </scenes>
     <resources>
-        <image name="lock" catalog="system" width="125" height="128"/>
+        <image name="poster" width="180" height="226.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

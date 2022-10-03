@@ -6,9 +6,13 @@ target 'Bolao' do
   use_frameworks!
 
   # Pods for Bolao
+  pod 'Firebase'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
   pod 'SVProgressHUD'
-
+  pod 'SDWebImage'
+  
 end
